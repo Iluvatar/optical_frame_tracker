@@ -1,0 +1,13 @@
+See more at devpost.com/software/optical-frame-tracker.
+
+Use: Press space to start tracking the object within the black square at the center of the screen.
+
+You can adjust some of the parameters by changing the line
+
+    finder1 = GrayImageFinder(np.fliplr(cv2.imread('test.jpg', 0)), .8, 10)
+
+according to the GrayImageFinder constructor:
+
+    GrayImageFinder(template, filter_confidence, min_count)
+
+filter_confidence should be between 0 and 1, and min_count should be greater than 4. template is just the starting object to track. If filter_confidence and min_count are higher, it is less likely to find the object, but more likely to avoid noise.
